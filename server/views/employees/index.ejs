@@ -1,0 +1,68 @@
+<% include ../partials/header.ejs %>
+
+<style>
+h2 {text-align: center;}
+</style>
+
+<!-- MAIN CONTENT -->
+<div class="container">
+<div class="row">
+<div class="col-md-offset-1 col-md-10">
+<h2>Employee Information</h2>
+<hr style="border-style: solid; border-color: rgb(27, 27, 27); border-width: 1px;"> 
+
+<!-- ------------------------ --> 
+<!-- Fixed the add button -->
+<!-- ------------------------ -->
+<a href="/employees/add" class="btn btn-primary"  role="button">
+<i class="fa fa-plus"></i> Add an employee</a>
+<br><br>
+
+
+<div class="table-responsive">
+<table class="table table-bordered table-striped table-hover">
+<thead>
+<tr>
+<th class="text-center">Employee id</th>
+<th class="text-center">Employee name</th>
+<th class="text-center">Department</th>
+<th class="text-center">Designation</th>
+<th class="text-center">Salary</th>
+<th class="text-center"></th>
+</tr>
+</thead>
+<tbody>
+
+<!-- Template Row -->
+<% for (let count = 0; count < employees.length; count++) { %>
+<tr>
+<td class="text-center"><%= employees[count].Employeeid %></td>
+<td class="text-center"><%= employees[count].Employeename %></td>
+<td class="text-center"><%= employees[count].Department %></td>
+<td class="text-center"><%= employees[count].Designation %></td>
+<td class="text-center"><%= employees[count].Salary %></td>
+<td class="text-center col-1">  
+
+
+<!-- ------------------------ -->
+<!-- Added the Edit Button -->
+<!-- ------------------------ -->
+<a href="/employees/edit/<%= employees[count]._id %>" class="btn btn-primary btn-sm">
+<i class="fas fa-pencil-alt"></i> Edit</a>
+</td>
+</tr>
+<% } %>
+</table>
+</div>
+<a href="/employees/delete/<%= employees.Employeename%>" class="btn btn-danger btn-sm">
+<i class="fas fa-trash-alt"></i> Delete</a>
+
+</main>   
+<div class="col-md-offset-1 col-md-10 text-center">
+<ul class="pagination pagination-lg pager" id="myPager"></ul>
+</div>
+</div>
+</div>
+</div>
+
+<% include ../partials/footer.ejs %>
