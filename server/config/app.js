@@ -1,3 +1,9 @@
+/* --------------------------------------------
+Irin Cibi - 301248509
+COMP 229 - Web Application Development (SEC.008)
+Employee List App
+--------------------------------------------- */
+
 // moddules for node and express
 let createError = require("http-errors");
 let express = require("express");
